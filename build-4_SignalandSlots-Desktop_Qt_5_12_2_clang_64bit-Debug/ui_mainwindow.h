@@ -13,7 +13,9 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -25,6 +27,8 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QPushButton *pushButton;
+    QProgressBar *progressBar;
+    QSlider *horizontalSlider;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -33,16 +37,24 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(400, 300);
+        MainWindow->resize(532, 381);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(140, 90, 111, 32));
+        pushButton->setGeometry(QRect(180, 120, 111, 32));
+        progressBar = new QProgressBar(centralWidget);
+        progressBar->setObjectName(QString::fromUtf8("progressBar"));
+        progressBar->setGeometry(QRect(120, 260, 261, 31));
+        progressBar->setValue(24);
+        horizontalSlider = new QSlider(centralWidget);
+        horizontalSlider->setObjectName(QString::fromUtf8("horizontalSlider"));
+        horizontalSlider->setGeometry(QRect(110, 220, 271, 20));
+        horizontalSlider->setOrientation(Qt::Horizontal);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 22));
+        menuBar->setGeometry(QRect(0, 0, 532, 22));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -53,6 +65,7 @@ public:
 
         retranslateUi(MainWindow);
         QObject::connect(pushButton, SIGNAL(clicked()), MainWindow, SLOT(close()));
+        QObject::connect(horizontalSlider, SIGNAL(valueChanged(int)), progressBar, SLOT(setValue(int)));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
