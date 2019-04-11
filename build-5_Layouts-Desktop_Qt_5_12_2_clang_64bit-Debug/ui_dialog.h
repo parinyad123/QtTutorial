@@ -13,7 +13,11 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -21,54 +25,120 @@ QT_BEGIN_NAMESPACE
 class Ui_Dialog
 {
 public:
+    QWidget *widget;
+    QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout;
+    QLabel *label;
+    QLineEdit *lineEdit;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_2;
+    QLineEdit *lineEdit_2;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *label_3;
+    QLineEdit *lineEdit_3;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *label_4;
+    QTextEdit *textEdit;
+    QHBoxLayout *horizontalLayout_5;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QWidget *widget;
-    QHBoxLayout *horizontalLayout;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_4;
 
     void setupUi(QDialog *Dialog)
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QString::fromUtf8("Dialog"));
-        Dialog->resize(400, 300);
-        pushButton = new QPushButton(Dialog);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(20, 30, 111, 32));
-        pushButton_2 = new QPushButton(Dialog);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(140, 30, 111, 32));
-        pushButton_3 = new QPushButton(Dialog);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(260, 30, 111, 32));
+        Dialog->resize(555, 406);
         widget = new QWidget(Dialog);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(30, 110, 337, 32));
-        horizontalLayout = new QHBoxLayout(widget);
+        widget->setGeometry(QRect(30, 20, 501, 371));
+        verticalLayout = new QVBoxLayout(widget);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton_6 = new QPushButton(widget);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
+        label = new QLabel(widget);
+        label->setObjectName(QString::fromUtf8("label"));
 
-        horizontalLayout->addWidget(pushButton_6);
+        horizontalLayout->addWidget(label);
 
-        pushButton_5 = new QPushButton(widget);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+        lineEdit = new QLineEdit(widget);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
 
-        horizontalLayout->addWidget(pushButton_5);
+        horizontalLayout->addWidget(lineEdit);
 
-        pushButton_4 = new QPushButton(widget);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
 
-        horizontalLayout->addWidget(pushButton_4);
+        verticalLayout->addLayout(horizontalLayout);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        label_2 = new QLabel(widget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        horizontalLayout_2->addWidget(label_2);
+
+        lineEdit_2 = new QLineEdit(widget);
+        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+
+        horizontalLayout_2->addWidget(lineEdit_2);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        label_3 = new QLabel(widget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        horizontalLayout_3->addWidget(label_3);
+
+        lineEdit_3 = new QLineEdit(widget);
+        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+
+        horizontalLayout_3->addWidget(lineEdit_3);
+
+
+        verticalLayout->addLayout(horizontalLayout_3);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        label_4 = new QLabel(widget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+
+        horizontalLayout_4->addWidget(label_4);
+
+        textEdit = new QTextEdit(widget);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+
+        horizontalLayout_4->addWidget(textEdit);
+
+
+        verticalLayout->addLayout(horizontalLayout_4);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        pushButton = new QPushButton(widget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        horizontalLayout_5->addWidget(pushButton);
+
+        pushButton_2 = new QPushButton(widget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+
+        horizontalLayout_5->addWidget(pushButton_2);
+
+
+        verticalLayout->addLayout(horizontalLayout_5);
 
 
         retranslateUi(Dialog);
+        QObject::connect(pushButton, SIGNAL(clicked()), Dialog, SLOT(close()));
 
         QMetaObject::connectSlotsByName(Dialog);
     } // setupUi
@@ -76,12 +146,12 @@ public:
     void retranslateUi(QDialog *Dialog)
     {
         Dialog->setWindowTitle(QApplication::translate("Dialog", "Dialog", nullptr));
-        pushButton->setText(QApplication::translate("Dialog", "PushButton", nullptr));
-        pushButton_2->setText(QApplication::translate("Dialog", "PushButton", nullptr));
-        pushButton_3->setText(QApplication::translate("Dialog", "PushButton", nullptr));
-        pushButton_6->setText(QApplication::translate("Dialog", "PushButton", nullptr));
-        pushButton_5->setText(QApplication::translate("Dialog", "PushButton", nullptr));
-        pushButton_4->setText(QApplication::translate("Dialog", "PushButton", nullptr));
+        label->setText(QApplication::translate("Dialog", "Subject", nullptr));
+        label_2->setText(QApplication::translate("Dialog", "To", nullptr));
+        label_3->setText(QApplication::translate("Dialog", "From", nullptr));
+        label_4->setText(QApplication::translate("Dialog", "Message", nullptr));
+        pushButton->setText(QApplication::translate("Dialog", "Close", nullptr));
+        pushButton_2->setText(QApplication::translate("Dialog", "Send", nullptr));
     } // retranslateUi
 
 };
