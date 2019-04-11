@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>555</width>
+    <width>569</width>
     <height>406</height>
    </rect>
   </property>
@@ -17,9 +17,9 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>20</y>
-     <width>501</width>
-     <height>371</height>
+     <y>40</y>
+     <width>491</width>
+     <height>337</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -110,12 +110,12 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>176</x>
-     <y>376</y>
+     <x>134</x>
+     <y>368</y>
     </hint>
     <hint type="destinationlabel">
-     <x>140</x>
-     <y>413</y>
+     <x>131</x>
+     <y>387</y>
     </hint>
    </hints>
   </connection>

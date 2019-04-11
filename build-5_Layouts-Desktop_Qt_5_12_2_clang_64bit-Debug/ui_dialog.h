@@ -47,10 +47,10 @@ public:
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QString::fromUtf8("Dialog"));
-        Dialog->resize(555, 406);
+        Dialog->resize(569, 406);
         widget = new QWidget(Dialog);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(30, 20, 501, 371));
+        widget->setGeometry(QRect(30, 40, 491, 337));
         verticalLayout = new QVBoxLayout(widget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
